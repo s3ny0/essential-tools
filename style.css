@@ -91,7 +91,7 @@ input:focus{
     background-color: #3C785C;
     color: white;
 }
-.saleItem{display: flex; align-items: center; justify-content: space-evenly;}
+.saleItem{display: flex; align-items: center; justify-content: space-evenly; overflow: hidden;}
 .saleItem input:hover{
     border-bottom: 5px solid #3C785C;
 }
@@ -125,27 +125,39 @@ input:focus{
         width: 90%;
         margin: 20px auto; padding: 10px;
     }
-    .invoice-header, .invoice-sub-header, .summary{
+    .invoice-header, .invoice-sub-header{
+        width: 100%;
+        flex-direction: column;
+    }
+    .summary{
         width: 100%;
     }
-    .invoice-header input{
+    .invoice-header input,
+    .invoice-sub-header input{
+        height: 30px;
+        width: 90%;
+    }
+    .profile-img, 
+    .order-indexing,
+    .bill-to-info,
+    .total-due
+    {
         width: 100%;
-    }
-    .profile-img, .bill-to-info{
-        width: 40%;
-    }
-    .order-indexing, .total-due{
-        width: 40%;
+        margin: 10px auto;
     }
     .order{width: 100%;}
     .tableHeader{padding: 10px 0px;}
     .item{
         height: 30px; width: 38%;
-        padding: 0% 1%;
+        padding: 10px 1%;
     }
-    .price, .quantity, .subTotal{
-        height: 30px; width: 17%;
-        padding: 0% 1%;
+    .price, .subTotal{
+        height: 30px; width: 20%;
+        padding: 10px 1%;
+    }
+    .quantity{
+        height: 30px; width: 13%;
+        padding: 10px 1%;
     }
     .payment-methods{
         width: 100%;
@@ -159,7 +171,7 @@ input:focus{
         margin: 5px auto;
     }
     #generate-invoice, .footer div{
-        height: 30px; width: 30%;
+        height: 40px; width: 30%;
     }
     #issued-by{width: 100%;}
 }
@@ -255,6 +267,13 @@ input:focus{
     color: white; text-align: center;
 }
 
+@media screen and (max-width: 699px) {
+    .receipt, .estimator{
+        width: 95%;
+        margin: 10px auto; padding: 50px 0px;
+        font-size: 2rem;
+    }
+}
 @media screen and (min-width: 700px) {
     .receipt, .estimator{
         width: 98%;
