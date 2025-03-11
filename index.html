@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+    <title>Invoice Me</title>
+</head>
+<body>
+    <section class="hero">
+        <img src="pexels-olia-danilevich.jpg" alt="">
+        <div class="hero-text">
+            <p><a href="#invoice">Invoice</a> | <a href="#receipt">Receipt</a> | <a href="estimator">Estimator</a></p>
+            <h1>fast, easy, simple, free.</h1>
+        </div>
+    </section>
+    <section class="invoice" id="invoice">
+        <div class="intro">
+            <h1>invoice</h1>
+            <p>create a personalized invoice for your business</p>
+        </div>
+        <section id="main">
+            <div class="invoice-header">
+                <div class="profile-img">
+                    <img src="" alt="">
+                    <input type="file">
+                </div>
+                <div class="order-indexing">
+                    <input id="company-name" type="text" placeholder="Company's Name" >
+                    <input id="order-number" type="text" placeholder="Invoice Number">
+                    <input type="date" name="date" id="invoice-date">
+                </div>
+            </div>
+    
+            <div class="invoice-sub-header">
+                <div class="bill-to-info">
+                    <h2>Bill to:</h2>
+                    <input id="bill-to-person" type="text" placeholder="Name">
+                    <input type="email" name="email" id="bill-to-email" placeholder="Email">
+                    <input id="bill-to-contact" type="text" placeholder="Phone number">
+                </div>
+                <div class="total-due">
+                    <h2>Total Due:</h2>
+                    <h1 id="total-due"></h1>
+                </div>
+            </div>
+            <hr style="height: 2px; width: 100%; margin: 20px auto; background-color: #465512; border: none;">
+            </div>
+            <div class="order">
+                <div class="tableHeader">
+                    <div class="item">
+                        <p>Item Description</p>
+                    </div>
+                    <div class="price">
+                        <p>Price</p>
+                    </div>
+                    <div class="quantity">
+                        <p>Quantity</p>
+                    </div>
+                    <div class="subTotal">
+                        <p>Total</p>
+                    </div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+    
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+            </div>
+            <hr style="height: 2px; width: 100%; margin: 20px auto; background-color: #465512; border: none;">
+            <div class="summary">
+                <div class="payment-methods">
+                    <h2>Payment Method</h2>
+                    <input id="payment-method" type="text" placeholder="Payment Method">
+                    <input id="account-number" type="text" placeholder="Account Number">
+                </div>
+                <div class="grand-totals">
+                    <div class="total-item">
+                        <h2>SUB TOTAL</h2><h2 id="sub-total">0.00</h2>
+                    </div>
+                    <div class="total-item">
+                        <p>Tax <span><input id="tax-rate" type="text" placeholder="%"></span></p><p id="tax-amount">0.00</p>
+                    </div>
+                    <div class="total-item">
+                        <p>Discount <span><input id="discount-rate" type="text" placeholder="%"></span></p><p id="discount-amount">0.00</p>
+                    </div>
+                    <hr style="height: 2px; width: 100%; margin: 50px auto 0px; background-color: #465512; border: none;">
+                    <div class="total-item">
+                        <h2>GRAND TOTAL</h2><h2 id="grand-total">0.00</h2>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 2px; width: 100%; margin: 20px auto; background-color: #465512; border: none;">
+            <div class="footer">
+                <button id="generate-invoice">Generate Invoice</button>
+                <div>
+                    <input id="issued-by" type="text" placeholder="Issued by">
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="receipt" id="receipt">
+        <h1>receipt coming soon...</h1>
+    </section>
+    <section class="estimator" id="estimator">
+        <h1>estimator coming soon...</h1>
+    </section>
+</body>
+</html>
