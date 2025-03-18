@@ -7,6 +7,25 @@ document.addEventListener("DOMContentLoaded", function () {
         return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
+    //Display the company logo in preview
+    document.getElementById("file-input").addEventListener("change", function(event) {
+        let file = event.target.files[0];
+        let companyLogoElement = document.getElementById("company-logo");
+        
+        // Remove any existing image
+        companyLogoElement.innerHTML = "";
+        
+        if (file) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let img = document.createElement("img");
+                img.src = e.target.result;
+                companyLogoElement.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
     function updateTotals() {
         let totalDue = 0;
         
@@ -61,12 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("generate-invoice").addEventListener("click", function () {
-        let totalDue = parseFloat(document.getElementById("total-due").textContent) || 0;
-        let subTotal = parseFloat(document.getElementById("sub-total").textContent) || 0;
-        let taxAmount = parseFloat(document.getElementById("tax-amount").textContent) || 0;
-        let discountAmount = parseFloat(document.getElementById("discount-amount").textContent) || 0;
-        let grandTotal = parseFloat(document.getElementById("grand-total").textContent) || 0;
-
+        function cleanNumber(value) {
+            return parseFloat(value.replace(/,/g, '')) || 0;
+        }
+        
+        let totalDue = cleanNumber(document.getElementById("total-due").textContent);
+        let subTotal = cleanNumber(document.getElementById("sub-total").textContent);
+        let taxAmount = cleanNumber(document.getElementById("tax-amount").textContent);
+        let discountAmount = cleanNumber(document.getElementById("discount-amount").textContent);
+        let grandTotal = cleanNumber(document.getElementById("grand-total").textContent);
+        
         const doc = new jsPDF();
         let margin = 10;
         let y = margin;
@@ -88,8 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.text(`${document.getElementById("company-name").value || ''}`, rightAlignX, y, { align: "right" });
         doc.setFontSize(8);
         doc.setFont("helvetica", "normal");
-        doc.text(`INV-${document.getElementById("order-number").value || ''}`, rightAlignX, y + 10, { align: "right" });
-        doc.text(`${document.getElementById("invoice-date").value || ''}`, rightAlignX, y + 15, { align: "right" });
+        doc.text(`${document.getElementById("company-address").value || ''}`, rightAlignX, y + 10, { align: "right" });
+        doc.text(`${document.getElementById("company-email").value || ''}`, rightAlignX, y + 15, { align: "right" });
+        doc.text(`${document.getElementById("company-phone").value || ''}`, rightAlignX, y + 20, { align: "right" });
+        doc.text(`INV-${document.getElementById("order-number").value || ''}`, rightAlignX, y + 25, { align: "right" });
+        doc.text(`${document.getElementById("invoice-date").value || ''}`, rightAlignX, y + 30, { align: "right" });
         y += 50;
 
         // Divider
@@ -102,16 +128,20 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.setFont("helvetica", "bold");
         doc.text("Bill To:", margin, y);
 
+        // Total Due Section
         doc.setFontSize(12);
         doc.setFont("helvetica", "bold");
         doc.text("Total Due", rightAlignX, y, { align: "right" });
         doc.setFont("helvetica", "normal");
         
+        // Bill To Section
         y += 10;
         doc.setFontSize(8);
         doc.setFont("helvetica", "normal");
         doc.text(`${document.getElementById("bill-to-person").value || ''}`, margin, y);
         doc.text(formatNumber(totalDue), rightAlignX, y, { align: "right" });
+        y += 5;
+        doc.text(`${document.getElementById("bill-to-address").value || ''}`, margin, y);
         y += 5;
         doc.text(`${document.getElementById("bill-to-email").value || ''}`, margin, y);
         y += 5;
@@ -130,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.text("Amount", rightAlignX, y , { align: "right" });
         y += 10;
 
-        document.querySelectorAll(".saleItem").forEach((item) => {
+        document.querySelectorAll("#saleItem").forEach((item) => {
             let description = item.querySelector(".item").value || 'N/A';
             let price = parseFloat(item.querySelector(".price").value) || 0;
             let quantity = parseInt(item.querySelector(".quantity").value) || 0;
@@ -189,7 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.setFont("helvetica", "normal");
         doc.text(formatNumber(parseFloat(grandTotal)), rightAlignX, y, { align: "right" });
 
+        //Issued By
         y += 20;
+        doc.setFontSize(8);
+        doc.setFont("helvetica", "normal");
+        doc.text(`This invoice was issued by ${document.getElementById("issued-by").value || ''}`, margin, y);
+
+        y += 10;
+
 
         
         // Divider

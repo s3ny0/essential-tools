@@ -1,0 +1,119 @@
+
+#calculator-container{
+    display: none;
+}
+
+#calculator{
+    width: 300px;
+    margin: 50px auto;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    background-color: #545251;
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#display{
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+    background-color: #e5e5e5;
+    border: 3px solid black;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+button:hover{
+    cursor: pointer;
+}
+ 
+#input{
+    text-align: right;
+    padding-right: 10px;
+}
+ 
+#keys{
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#numbers{
+    width: 74%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#operators{
+    width: 25%;
+}
+
+.button{
+    width: 60px;
+    height: 50px;
+    background-color: #c7c3c0;
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px,
+    #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -3.2px -3.2px 8px 0px inset;
+    border: 3px solid black;
+    margin: 2px;
+    font-size: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+.button:active {
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      #c7c3c0 -3.2px -3.2px 8px 0px inset;
+  }
+
+#clear{
+    width: 128px;
+    background-color: #d42a02;
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px, #fb702c 2px 2px 10px 0px inset,
+    #d42a02 -4px -4px 1px 0px inset;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#clear:active {
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      #d42a02 -3.2px -3.2px 8px 0px inset;
+  }
+
+#zero{
+    width: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#equals{
+    height: 113px;
+    background-color: #3b708d;
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px,
+    #a8a6a4 1.5px 1.5px 1px 0px inset, #545251 -3.2px -3.2px 8px 0px inset;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#equals:active {
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      #545251 -3.2px -3.2px 8px 0px inset;
+  }
