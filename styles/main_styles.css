@@ -1,0 +1,180 @@
+/*Index Page & Global Styling*/
+
+@font-face {
+    font-family: "Courier Bold";
+    src: url(../assets/fonts/CourierPrimeBold.ttf);
+}
+
+@font-face {
+    font-family: "Courier";
+    src: url(../assets/fonts/CourierPrime.ttf);
+}
+
+*{scroll-behavior: smooth;}
+body{
+    margin: 0px;
+    background: #1f1f1f;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    transition: all .4s ease;
+}
+
+/*general styling*/
+
+/*input:hover{
+    cursor: pointer;
+    border-bottom: 2.5px solid black;
+}*/
+a{color: black;}
+
+/*Hero section*/
+.hero{
+    display: flex;
+    width: 98%;
+    background-color: #EB4300;
+    border-radius: 25px;
+}
+
+.hero img{
+    border-radius: 20px;
+}
+.hero-right{
+    display: flex;
+    flex-direction: column;
+}
+.hero-right h1{
+    font-family: "Courier Bold";
+    margin: 0px;
+}
+.hero-right h3{
+    font-family: "Courier";
+    color: #e6e6e6;
+    margin: 0px;
+}
+
+@media screen and (max-width: 699px) {
+    .hero{
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero img{
+        height: 500px; width: 95%;
+        margin: 0px auto;
+        object-fit: cover;
+    }
+    .hero-right{
+        width: 95%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    .hero-right img{
+        height: 100px;
+        width: 100px;
+    }
+    .hero-right h1{
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .hero{
+        height: 100vh; width: 98%;
+        margin: 10px auto; padding: 20px 0px;
+        display: flex; align-items: center; justify-content: space-evenly;
+    }
+    .hero img{
+        height: 100%; width: 38%;
+        object-fit: cover;
+    }
+    .hero-right{
+        height: 100%; 
+        width: 58%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .hero-right img{
+        height: 300px;
+        width: 400px;
+        object-fit: cover;
+        
+    }
+    .hero-right div{
+        width: 95%;
+    }
+    .hero-right h1{
+        font-size: 6rem;
+    }
+    .hero-right h3{
+        font-size: 2.5rem;
+    }
+}
+
+
+
+
+/*receipt & estimator*/
+
+
+
+.estimator{
+    display: flex; align-items: center; justify-content: center;
+    background-color: #db8655;
+    color: white; text-align: center;
+}
+
+@media screen and (max-width: 699px) {
+    .estimator{
+        width: 95%;
+        margin: 10px auto; padding: 50px 0px;
+        font-size: 2rem;
+    }
+}
+@media screen and (min-width: 700px) {
+    .estimator{
+        width: 98%;
+        margin: 10px auto; padding: 50px 0px;
+        font-size: 5rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #float{
+        height: 70px; width: 70px;
+        position: fixed;
+        top: 75%; left: 90%;
+    }
+
+    #float-buttons{
+        height: 10vh; width: 100vw;
+        position: fixed;
+        top: 90vh; left: 0vw;
+    }
+    #float-buttons button{
+        height: 50px; width: 50px;
+        margin: 5px auto;
+    }
+
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+

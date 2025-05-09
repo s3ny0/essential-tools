@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="styles/nav_styles.css">
+    <link rel="stylesheet" href="styles/receipt_styles.css">
+    <!--PDF generator lib-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!--Jquery lib-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Flaticon lib-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!--Scripts-->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/receipt_script.js"></script>
+    <!--Page icon and title-->
+    <link rel="icon" type="image/png" href="assets/images/Logo.png">
+    <title>Work Nest | Receipt</title>
+</head>
+<body>
+    <!--Nav Bar-->
+    <div class="nav-bar">
+        <a href="index.html"><div class="logo">
+            <img src="assets/images/Logo.png" alt="Work Nest Logo">
+            <h1>WN</h1>
+        </div></a>
+        <button id="launch-menu"><i class="fi fi-rr-menu-burger"></i></button>
+    </div>
+
+    <!--Dropdown Menu-->
+    <div id="dropdown-menu">
+        <a href="index.html"><h1>Home</h1></a>
+        <h1 id="cascade-tools">Tools</h1>
+        <div id="tools-menu">
+            <button>Calculator</button>
+            <a href="invoice.html"><button>Invoice</button></a>
+            <a href="receipt.html"><button>Receipt</button></a>
+            <button>Estimator</button>
+        </div>
+        <h1>About</h1>
+        <h1>Contact</h1>
+    </div>
+
+    <div id="receipt-wrapper">
+        
+        <section class="receipt" id="receipt">
+            <div class="receipt-header">
+                <input type="text" id="receipt-business" placeholder="BUSINESS NAME">
+                <input type="text" id="receipt-address" placeholder="Address">
+                <input type="tel" id="receipt-phone" placeholder="Phone">
+                <input type="email" id="receipt-email" placeholder="Email">
+            </div>
+            <div class="receipt-form">
+                <h1>Order Summary</h1>
+                <div class="receipt-unit">
+                    <div class="receipt-items">
+                        <input type="text" id="receipt-item" placeholder="Item">
+                        <input type="text" id="receipt-item-desc" placeholder="Description">
+                        <input type="text" id="receipt-item-qty" placeholder="Qty">
+                        <input type="text" id="receipt-item-price" placeholder="Price">
+                    </div>
+                    <div class="receipt-item-total">
+                        <h1 id="receipt-item-total">0.00</h1>
+                    </div>
+                </div>
+                <div class="receipt-unit">
+                    <div class="receipt-items">
+                        <input type="text" id="receipt-item" placeholder="Item">
+                        <input type="text" id="receipt-item-desc" placeholder="Description">
+                        <input type="text" id="receipt-item-qty" placeholder="Qty">
+                        <input type="text" id="receipt-item-price" placeholder="Price">
+                    </div>
+                    <div class="receipt-item-total">
+                        <h1 id="receipt-item-total">0.00</h1>
+                    </div>
+                </div>
+                <div class="receipt-unit">
+                    <div class="receipt-items">
+                        <input type="text" id="receipt-item" placeholder="Item">
+                        <input type="text" id="receipt-item-desc" placeholder="Description">
+                        <input type="text" id="receipt-item-qty" placeholder="Qty">
+                        <input type="text" id="receipt-item-price" placeholder="Price">
+                    </div>
+                    <div class="receipt-item-total">
+                        <h1 id="receipt-item-total">0.00</h1>
+                    </div>
+                </div>
+                <div class="receipt-unit">
+                    <div class="receipt-items">
+                        <input type="text" id="receipt-item" placeholder="Item">
+                        <input type="text" id="receipt-item-desc" placeholder="Description">
+                        <input type="text" id="receipt-item-qty" placeholder="Qty">
+                        <input type="text" id="receipt-item-price" placeholder="Price">
+                    </div>
+                    <div class="receipt-item-total">
+                        <h1 id="receipt-item-total">0.00</h1>
+                    </div>
+                </div>
+                <div class="receipt-unit">
+                    <div class="receipt-items">
+                        <input type="text" id="receipt-item" placeholder="Item">
+                        <input type="text" id="receipt-item-desc" placeholder="Description">
+                        <input type="text" id="receipt-item-qty" placeholder="Qty">
+                        <input type="text" id="receipt-item-price" placeholder="Price">
+                    </div>
+                    <div class="receipt-item-total">
+                        <h1 id="receipt-item-total">0.00</h1>
+                    </div>
+                </div>
+                <div class="receipt-unit">
+                    <div class="receipt-items">
+                        <input type="text" id="receipt-item" placeholder="Item">
+                        <input type="text" id="receipt-item-desc" placeholder="Description">
+                        <input type="text" id="receipt-item-qty" placeholder="Qty">
+                        <input type="text" id="receipt-item-price" placeholder="Price">
+                    </div>
+                    <div class="receipt-item-total">
+                        <h1 id="receipt-item-total">0.00</h1>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="receipt-conclusion">
+                <div class="conclusion-item">
+                    <h1>Delivery</h1>
+                    <input type="text" id="receipt-delivery" placeholder="0.00">
+                </div>
+                <div class="conclusion-item">
+                    <h1>Sub Total</h1>
+                    <h1 id="receipt-subtotal">0.00</h1>
+                </div>
+                <div class="conclusion-item">
+                    <h1>Discount</h1>
+                    <input type="text" id="receipt-discount" placeholder="0.00">
+                </div>
+                <div class="conclusion-item conclusion-total">
+                    <h1>TOTAL</h1>
+                    <h1 id="receipt-total">0.00</h1>
+                </div>
+            </div>
+            <div class="receipt-footer">
+                <p>Hello <span><input type="text" placeholder="name">!</span> Thank you for your purchase! <br>Your order has been shipped. Sit tight for your delivery!</p>
+                <button id="generate-receipt">Generate Receipt</button>
+            </div>
+        </section>
+        <h1 class="page-title">RECEIPT</h1>
+    </div>
+    <p style="color: white; text-align: center; margin: 20px auto;">built & maintained by Senyosco's Inc.</p>
+</body>
+</html>

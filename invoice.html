@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="styles/nav_styles.css">
+    <link rel="stylesheet" href="styles/invoice_styles.css">
+    <!--PDF generator lib-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!--Jquery lib-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Flaticon lib-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!--Scripts-->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/inv_script.js"></script>
+    <!--Page icon and title-->
+    <link rel="icon" type="image/png" href="assets/images/Logo.png">
+    <title>Work Nest | Invoice</title>
+</head>
+<body>
+    <!--Nav Bar-->
+    <div class="nav-bar">
+        <a href="index.html"><div class="logo">
+            <img src="assets/images/Logo.png" alt="Work Nest Logo">
+            <h1>WN</h1>
+        </div></a>
+        <button id="launch-menu"><i class="fi fi-rr-menu-burger"></i></button>
+    </div>
+
+    <!--Dropdown Menu-->
+    <div id="dropdown-menu">
+        <a href="index.html"><h1>Home</h1></a>
+        <h1 id="cascade-tools">Tools</h1>
+        <div id="tools-menu">
+            <button>Calculator</button>
+            <a href="invoice.html"><button>Invoice</button></a>
+            <a href="receipt.html"><button>Receipt</button></a>
+            <button>Estimator</button>
+        </div>
+        <h1>About</h1>
+        <h1>Contact</h1>
+    </div>
+
+    <!--Invoice Section-->
+    <section class="invoice" id="invoice">
+        <section id="invoice-preview">
+            <div class="invoice-header">
+                <div class="profile-img">
+                    <div id="company-logo">
+                        <img src="assets/images/placeholder-600x400.png" alt="">
+                    </div>
+                    <input type="file" id="file-input" accept="image/*">
+                </div>
+
+                <div id="order-indexing">
+                    <input id="company-name" type="text" placeholder="Company's Name" >
+                    <input id="company-address" type="text" placeholder="Company's Address">
+                    <input id="company-email" type="text" placeholder="Company's Email">
+                    <input id="company-phone" type="text" placeholder="Company's Phone">
+                    <input id="order-number" type="text" placeholder="Invoice Number">
+                </div>
+            </div>
+    
+            <div class="invoice-sub-header">
+                <div class="bill-to-info">
+                    <h2>Bill to:</h2>
+                    <input id="bill-to-person" type="text" placeholder="Name" required>
+                    <input id="bill-to-address" type="text" placeholder="Address">
+                    <input id="bill-to-email" type="email" name="email"  placeholder="Email">
+                    <input id="bill-to-contact" type="text" placeholder="Phone number">
+                </div>
+                <div class="total-due">
+                    <h2>Total Due:</h2>
+                    <h2 id="total-due"></h2>
+                </div>
+            </div>
+            <hr style="height: 2px; width: 100%; margin: 20px auto; background-color: #465512; border: none;">
+            </div>
+            <div class="order">
+                <div class="tableHeader">
+                    <div id="item">
+                        <p>Item</p>
+                    </div>
+                    <div id="price">
+                        <p>Price</p>
+                    </div>
+                    <div id="quantity">
+                        <p>Qty</p>
+                    </div>
+                    <div id="subTotal">
+                        <p>Total</p>
+                    </div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+                <div class="saleItem">
+                    <input type="text" class="item" id="item" placeholder="Enter item">
+                    <input type="text" id="price" class="price" placeholder="0.00">
+                    <input class="quantity" id="quantity" placeholder="0">
+                    <div class="subTotal" id="subTotal"></div>
+                </div>
+            </div>
+            <hr style="height: 2px; width: 100%; margin: 20px auto; background-color: #465512; border: none;">
+            <div class="summary">
+                <div class="payment-methods">
+                    <h2>Payment Method</h2>
+                    <input id="payment-method" type="text" placeholder="Payment Method">
+                    <input id="account-number" type="text" placeholder="Account Number">
+                </div>
+                <div class="grand-totals">
+                    <div class="total-item">
+                        <h2>SUB TOTAL</h2><h2 id="sub-total">0.00</h2>
+                    </div>
+                    <div class="total-item">
+                        <p>Tax <span><input id="tax-rate" type="text" placeholder="%"></span></p><p id="tax-amount">0.00</p>
+                    </div>
+                    <div class="total-item">
+                        <p>Discount <span><input id="discount-rate" type="text" placeholder="%"></span></p><p id="discount-amount">0.00</p>
+                    </div>
+                    <hr style="height: 2px; width: 100%; margin: 50px auto 0px; background-color: #465512; border: none;">
+                    <div class="total-item">
+                        <h2>GRAND TOTAL</h2><h2 id="grand-total">0.00</h2>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 2px; width: 100%; margin: 20px auto; background-color: #465512; border: none;">
+            <div class="footer">
+                <button id="generate-invoice">Generate Invoice</button>
+                <div>
+                    <input id="issued-by" type="text" placeholder="Issued by">
+                </div>
+            </div>
+        </section>
+
+        <h1 class="page-title">INVOICE</h1>
+    </section>
+
+    <p style="color: white; text-align: center; margin: 20px auto;">built & maintained by Senyosco's Inc.</p>
+</body>
+</html>

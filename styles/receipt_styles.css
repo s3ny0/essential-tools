@@ -1,0 +1,254 @@
+/*Fonts*/
+@font-face {
+    font-family: "Courier Bold";
+    src: url(assets/fonts/CourierPrimeBold.ttf);
+}
+
+@font-face {
+    font-family: "Courier";
+    src: url(assets/fonts/CourierPrime.ttf);
+}
+
+body{
+    margin: 0px;
+    background: #1f1f1f;
+}
+
+#receipt-wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0px auto;
+    padding: 10px 0px;
+    background-color: #3E67B2;
+    border-radius: 25px;
+    overflow: hidden;
+}
+#receipt-wrapper h1{
+    font-family: "Courier Bold";
+    color: #154b69;
+}
+.receipt{
+    overflow-y: scroll;
+    white-space: nowrap;
+    background-color: #DCDCD0;
+}
+.receipt::-webkit-scrollbar{
+    display: none;
+}
+
+.receipt input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.receipt input:hover{
+    border-left: 5px solid black;
+}
+
+.receipt-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0px auto;
+    padding: 20px 0px;
+    border-bottom: 2px dashed black;
+}
+#receipt-business{
+    height: 50px;
+    width: 100%;
+    padding: 0% 1.5%;
+    font-family: "Courier Bold";
+    color: #064366;
+    font-size: 1.5rem;
+}
+#receipt-business::placeholder{
+    font-family: "Courier Bold";
+    font-size: 1.5rem;
+}
+
+#receipt-address,
+#receipt-phone,
+#receipt-email{
+    height: 30px;
+    width: 100%;
+    padding: 0% 1.5%;
+    font-family: "Courier";
+    font-size: 1rem;
+    color: black;
+}
+.receipt-header input:hover{
+    border-left: 5px solid black;
+}
+
+.receipt-form{
+    width: 92%;
+    margin: 30px auto;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed black;
+}
+.receipt-form h1{
+    font-family: "Courier Bold";
+    font-weight: bolder;
+    font-size: 1.25rem;
+    color: #064366;
+}
+
+.receipt-unit{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 5px auto;
+}
+
+.receipt-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+}
+#receipt-item{
+    font-family: "Courier Bold";
+    font-size: 1.3rem;
+}
+
+.receipt-items input{
+    width: 97%;
+    padding: 0% 1.5%;
+}
+.receipt-items input:hover{
+    border-left: 5px solid black;
+}
+
+#receipt-item-desc,
+#receipt-item-qty,
+#receipt-item-price{
+    font-family: "Courier";
+    font-size: 1rem;
+}
+
+.receipt-item-total{
+    width: 20%;
+    text-align: right;
+}
+#receipt-item-total{
+    font-family: "BP Replay Bold";
+    font-size: 1.5rem;
+}
+
+.receipt-conclusion{
+    width: 90%;
+    margin: 0px auto;
+}
+
+.conclusion-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px auto;
+}
+.conclusion-item input{
+    height: 30px;
+    width: 50px;
+    text-align: right;
+    font-family: "Courier Bold";
+    font-size: 1.5rem;
+    color: #000000;
+}
+.conclusion-item h1{
+    font-family: "Courier Bold";
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.conclusion-total{
+    margin: 20px auto 50px;
+    padding: 20px 0px;
+    border-top:  2px dashed black;
+    border-bottom: 2px dashed black;
+}
+.conclusion-total h1{
+    font-size: 2rem;
+    color: #064366;
+
+}
+
+.receipt-footer{
+    width: 90%;
+    margin: 40px auto 100px;
+    padding: 10px 0px;
+    font-family: "Courier";
+    font-size: 1rem;
+    color: #000000;
+}
+.receipt-footer input{
+    width: 70px;
+    text-align: center;
+    font-family: "Courier";
+    font-size: 1rem;
+}
+
+#generate-receipt{
+    height: 30px;
+    width: 150px;
+    margin: 50px 0px;
+    border: none;
+    background-color: #064366;
+    color: white;
+    font-family: "Courier Bold";
+    font-size: 1rem;
+    cursor: pointer;
+}
+#generate-receipt:hover{
+    transform: scale(1.2);
+}
+
+.page-title {
+    color: #193E82;
+}
+
+@media screen and (min-width: 700px) {
+    #receipt-wrapper{
+        width: 98%;
+    }
+    .receipt{
+        height: 100%;
+        width: 50%;
+        margin-left: 15px;
+        border-radius: 20px;
+    }
+
+    #generate-receipt{
+        border-radius: 10px;
+    }
+
+    .page-title{
+        width: 45%;
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    #receipt-wrapper{
+        flex-direction: column-reverse;
+        width: 95%;
+    }
+    .receipt{
+        height: 90%;
+        width: 90vw;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+
+    #generate-receipt{
+        border-radius: 8px;
+    }
+
+    .page-title{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}

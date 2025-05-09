@@ -1,0 +1,282 @@
+/*Fonts*/
+@font-face {
+    font-family: "Courier Bold";
+    src: url(assets/fonts/CourierPrimeBold.ttf);
+}
+
+@font-face {
+    font-family: "Courier";
+    src: url(assets/fonts/CourierPrime.ttf);
+}
+
+body{
+    margin: 0px;
+    background: #1f1f1f;
+}
+
+#invoice-preview input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "Courier";
+}
+#invoice-preview input:hover{
+    border-left: 5px solid black;
+}
+
+/*invoice section*/
+.invoice{
+    display: flex;
+    height: 100vh;
+    margin: 0px auto;
+    background-color: #EDC200;
+    padding: 10px 0px;
+    border-radius: 25px;
+    font-family: "Courier";
+}
+
+
+#invoice-preview{
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #DCDCD0;
+}
+#invoice-preview::-webkit-scrollbar{
+    display: none;
+}
+
+#company-logo img{
+    border-radius: 15px;
+}
+
+.invoice-header,
+.invoice-sub-header, 
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.tableHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+}
+.saleItem{
+    display: flex; align-items: center; justify-content: space-evenly; overflow: hidden;
+    text-align: center;
+}
+.saleItem input:hover{
+    border-bottom: 5px solid black;
+}
+.price, .quantity{text-align: center;}
+.subTotal{text-align: right;}
+.total-item{
+    display: flex; align-items: center; justify-content: space-between;
+}
+#generate-invoice{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+#generate-invoice:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.page-title{
+    color: #A79010;
+}
+
+@media screen and (max-width: 699px) {
+    .invoice{
+        flex-direction: column-reverse;
+        width: 95%;
+    }
+    .invoice .intro{
+        width: 95%;
+        margin: 10px auto;
+    }
+    .intro h1{font-size: 2.5rem;}
+
+    #invoice-preview{
+        height: 100%;
+        width: 85vw;
+        margin: 0px auto;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .invoice-header, 
+    .invoice-sub-header{
+        width: 100%;
+        flex-direction: column;
+    }
+    .summary{
+        width: 100%;
+    }
+    .invoice-header input,
+    .invoice-sub-header input{
+        height: 30px;
+        width: 90%;
+    }
+    .profile-img,
+    #order-indexing,
+    .bill-to-info,
+    .total-due
+    {
+        width: 100%;
+        margin: 10px auto;
+    }
+    #company-logo img{
+        height: 250px; 
+        width: 100%;
+        object-fit: cover;
+    }
+    .order{width: 100%;}
+    .tableHeader{padding: 10px 0px;}
+    #item{
+        height: 30px; 
+        width: 38%;
+        padding: 10px 1%;
+    }
+    #price, #subTotal{
+        height: 30px; 
+        width: 20%;
+        padding: 10px 1%;
+    }
+    #quantity{
+        height: 30px; 
+        width: 13%;
+        padding: 10px 1%;
+    }
+    .payment-methods{
+        width: 100%;
+    }
+    .grand-totals{
+        width: 100%;
+        margin: 20px auto;
+    }
+    .total-item{
+        height: 30px; 
+        width: 100%;
+        margin: 5px auto;
+    }
+    #generate-invoice, .footer div{
+        height: 40px; 
+        width: 30%;
+    }
+    #issued-by{width: 100%;}
+
+    .page-title{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .invoice{
+        width: 98%;
+        justify-content: space-between;
+    }
+    .intro{
+        width: 95%;
+        margin: 10px auto;
+        font-size: 2.5rem;
+    }
+    
+    #invoice-preview{
+        width: 70%;
+        margin-left: 10px;
+        padding: 0px 20px;
+        border-radius: 20px;
+    }
+    .invoice-header, 
+    .invoice-sub-header{
+        width: 100%;
+        justify-content: space-between;
+        margin: 20px auto;
+    }
+    .profile-img{width: 20%;}
+    #order-indexing,
+    .bill-to-info,
+    .total-due,
+    .payment-methods,
+    .grand-totals,
+    .footer button,
+    .footer div
+    {width: 30%;}
+
+    #company-logo{
+        height: 150px;
+        width: 100%;
+    }
+    #company-logo img{
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #order-indexing input,
+    .bill-to-info input, 
+    .payment-methods input,
+    .footer input
+    {
+        height: 30px;
+        width: 90%;
+        margin: 1px auto;
+        padding: 0px 5%;
+    }
+    #company-name{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+    #order{width: 100%;}
+    #order{
+        margin: 1px auto;
+    }
+    .saleItem{
+        height: 40px;
+        margin: 0px auto -3px;
+    }
+    #item{
+        height: 40px; width: 50%;
+        padding: 0px 1%;
+    }
+    #price, #quantity, .subTotal{
+        height: 40px; width: 13%;
+        padding: 0px 1%;
+    }
+
+    .summary{
+        width: 100%;
+        margin: 0px auto;
+        display: flex; 
+        justify-content: space-between;
+    }
+
+    .total-item{
+        width: 100%;
+        display: flex; 
+        justify-content: space-between;
+    }
+    .total-item p span input{
+        height: 30px; width: 30px;
+        padding: 0px 10px;
+    }
+
+    .footer{
+        width: 95%;
+        margin: 50px auto;
+        display: flex; 
+        justify-content: space-between;
+    }
+    .footer button{height: 40px;}
+
+    .page-title{
+        width: 25%;
+        font-size: 4rem;
+    }
+}

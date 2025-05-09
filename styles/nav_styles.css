@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Courier Bold";
+    src: url(../assets/fonts/CourierPrimeBold.ttf);
+}
+@font-face {
+    font-family: "Courier";
+    src: url(../assets/fonts/CourierPrime.ttf);
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin: 10px auto;
+    padding: 10px 0px;
+    background-color: #DCDCD0;
+    z-index: 20;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.logo img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.logo h1{
+    font-family: "Courier Bold";
+}
+
+.nav-bar button{
+    margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#dropdown-menu{
+    background-color: #DCDCD0;
+    display: none;
+}
+#dropdown-menu h1{
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-family: "Courier Bold";
+}
+#dropdown-menu h1:hover{
+    color: #EB4300;
+    cursor: pointer;
+}
+
+#tools-menu{
+    width: 100%;
+    display: none;
+}
+#dropdown-menu button{
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-family: "Courier";
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+}
+#dropdown-menu button:hover{
+    color: #EB4300;
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width: 700px) {
+    .nav-bar{
+        width: 98%;
+        border-radius: 15px;
+    }
+
+    #dropdown-menu{
+        position: fixed;
+        top: 90px;
+        right: 1%;
+        width: 300px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .nav-bar{
+        width: 95%;
+        border-radius: 20px;
+    }
+
+    #dropdown-menu{
+        position: fixed;
+        top: 90px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
