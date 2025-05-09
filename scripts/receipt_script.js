@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
                 doc.setFontSize(15);
                 doc.setFont("courier", "bold");
-                doc.setTextColor(237, 40, 0);
+                doc.setTextColor(25, 62, 130);
                 doc.text(`GHS ${total}`, rightAlignX, y , { align: "right" });
                 y += 5;
             }
